@@ -1,3 +1,4 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +10,7 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Header Styling */
 .img-of-header {
   background-image: url('/public/hero-bg.jpg');
   height: 650px;
@@ -21,6 +23,7 @@ body {
   padding-bottom: 11rem;
 }
 
+/* Navbar Styling */
 .navbar {
   display: flex;
   align-items: center;
@@ -32,6 +35,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 6.5rem;
 }
 
 .logo-of-web {
@@ -47,6 +51,7 @@ body {
   color: black;
 }
 
+/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
@@ -63,8 +68,9 @@ body {
   color: rgb(252, 95, 95);
 }
 
+/* Hamburger Icon Styling */
 .hamburger {
-  display: none; 
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
@@ -77,6 +83,7 @@ body {
   transition: 0.3s;
 }
 
+/* Cart Information */
 .cart-info {
   display: flex;
   align-items: center;
@@ -93,20 +100,22 @@ body {
   align-items: center;
   color: rgb(252, 95, 95);
 }
+
 .cart-icon .itemCount {
   position: absolute;
   background-color: rgb(211, 47, 47);
   color: #fff;
-  top: -8px; 
+  top: -8px;
   right: -8px;
   border-radius: 50%;
   padding: 2px 6px;
   font-size: 12px;
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Header Content Styling */
 .data-on-header {
   margin-left: 14rem;
   margin-top: 5rem;
@@ -141,14 +150,11 @@ h1 {
   background-color: #27572F;
 }
 
-
-
 /* Media Queries */
 @media (max-width: 1200px) {
   .img-of-header {
     height: 580px;
   }
-
   .data-on-header {
     margin-left: 8rem;
   }
@@ -158,22 +164,18 @@ h1 {
   .img-of-header {
     height: 680px;
   }
-
   .name-of-web {
     font-size: 20px;
   }
-
   h1 {
     font-size: 48px;
     line-height: 1.2;
     margin-left: 1rem;
   }
-
   .btn-shop {
     padding: 0.5rem 1.5rem;
     font-size: 14px;
   }
-
   .cart-icon .itemCount {
     top: -5px;
     right: -5px;
@@ -182,21 +184,30 @@ h1 {
 
 @media (max-width: 923px) {
   .nav-links {
-    display: none; 
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
-    right: 20px;
+    top: 0;
+    right:0;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 15px 0 0 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     gap: 15px;
+    z-index: 1000;
+    height: 619px;
+    transform: translateX(100%); /* Start hidden off-screen */
+    transition: transform 0.9s ease; 
   }
 
   .nav-links.open {
-    display: flex; 
-    
+    display: flex;
+    width: 30%;
+    height: 618.7px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
   }
 
   .hamburger {
@@ -204,131 +215,182 @@ h1 {
   }
 }
 
-.side-menu.open {
-  right: 0; 
-}
-
 @media (max-width: 768px) {
+
+  .nav-links.open {
+    display: flex;
+    width: 30%;
+    height: 590px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+  }
   .img-of-header {
     height: 550px;
   }
-
   h1 {
     font-size: 40px;
     line-height: 1.2;
     margin-left: 1rem;
   }
-
   .data-on-header {
     margin-left: 1rem;
     text-align: center;
   }
-
   .btn-shop {
     width: 140px;
     font-size: 14px;
   }
-
   .nav-links {
     padding-right: 1rem;
   }
 }
 
 @media (max-width: 576px) {
+  .nav-links.open {
+    display: flex;
+    width: 30%;
+    height: 408px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+  }
   .img-of-header {
     height: 480px;
     padding-bottom: 1rem;
   }
-
   .data-on-header {
     margin-left: 0;
     text-align: center;
   }
-
   h1 {
     font-size: 32px;
   }
-
   .btn-shop {
     padding: 0.5rem 1rem;
   }
-
   .nav-links {
     flex-direction: column;
     align-items: center;
     gap: 15px;
     padding: 0;
   }
-
   .cart-icon .itemCount {
     top: 1rem;
     right: 2rem;
   }
 }
 
-@media (max-width: 577px) {
-  .cart-icon .itemCount {
-    top: -5px;
-    right: -5px; 
-    font-size: 10px; 
-  }
-
-  .cart-icon {
+@media (max-width: 555px) {
+  .nav-links.open {
     display: flex;
+    width: 30%;
+    height: 500px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+  }
+  @media (max-width: 555px) {
+    .nav-links.open {
+      display: flex;
+      width: 30%;
+      height: 400px;
+      margin: 0;
+      justify-content: center;
+      align-items: center;
+      transform: translateX(0);
+    }}
+  .navbar {
+    flex-direction: column;
     align-items: center;
   }
+  .name-of-web {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .logo-of-web {
+    width: 40px;
+    height: 22px;
+  }
+  .logo-container {
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+  .cart-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  .hamburger {
+    display: flex;
+    padding-left: 3rem;
+  }
 }
-@media (max-width: 555px) {
-  .img-of-header {
-    /* padding-right: -10rem; */
+
+@media (max-width: 633px) {
+  .nav-links.open {
+    display: flex;
+    width: 30%;
+    height: 596px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 577px) {
+  .nav-links.open {
+    display: flex;
+    width: 30%;
+    height: 408px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-links.open {
+    display: flex;
+    width: 30%;
+    height: 435px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(0);
   }
 
   .navbar {
     flex-direction: column;
     align-items: center;
   }
-
   .name-of-web {
     font-size: 14px;
     font-weight: 700;
-    justify-content: flex-start;
-    align-items: start;
   }
-
   .logo-of-web {
     width: 40px;
     height: 22px;
   }
-
   .logo-container {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
+    padding-left: 0;
   }
-
   .cart-info {
     margin-top: 10px;
-    display: flex;  
-    align-items: center; 
-    gap: 10px; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
   }
-  .first-paragraph{
-    justify-content: start;
-    align-items: start;
-  }
-
   .hamburger {
-    display: flex; 
-    flex-direction: column; 
-    cursor: pointer;
-    padding-left: 3rem; 
-  }
-
-  .hamburger div {
-    width: 25px; 
-    height: 3px; 
-    background-color: black; 
-    margin: 4px 0; 
-    transition: 0.3s; 
+    display: flex;
+    padding-left: 3rem;
   }
 }
-

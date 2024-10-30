@@ -5,9 +5,11 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import ShoppingCart from './components/ShoppingCart';
 import CustomAlert from './components/AlertAddProduct'; 
+
 function App() {
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control menu open/close
 
   const showAlertMessage = (message) => {
     setAlertMessage(message);
@@ -18,9 +20,16 @@ function App() {
     }, 5000);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+  };
+
   return (
     <Router>
-      <Header />
+      <Header 
+        isMenuOpen={isMenuOpen} // Pass the state to Header
+        toggleMenu={toggleMenu} // Pass the toggle function to Header
+      />
       <Routes>
         <Route 
           path="/" 
