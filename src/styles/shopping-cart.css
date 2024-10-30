@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .ShoppingCart {
+    border: solid 1px black;
+    width: 90%;
+    margin: 3rem auto; 
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.292);
+    padding: 0%;
+  }
+  
+  .tr-table {
+    text-align: left;
+    padding-left: 2rem;
+  }
+  
+  .tr-table > th {
+    color: rgba(0, 0, 0, 0.747);
+  }
+  
+  .ShoppingCart td {
+    padding: 10px 15px;
+  }
+  
+  .total-price-text {
+    font-weight: bold;
+  }
+  
+  .product-cards-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5rem; 
+  }
+  
+  .product-card-shop {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  .product-image-shop {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+  }
+  
+  .product-name-shop {
+    margin: 0px 0px 8px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.334;
+    font-weight: 500;
+    font-size: 20px; 
+  }
+  
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .x-mark-btn {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .x-mark-icon {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .x-mark-icon:hover {
+    transform: scale(1.1) rotate(90deg);
+    color: rgb(252, 95, 95);
+  }
+  
+  @media (max-width: 768px) {
+    .ShoppingCart {
+      width: 95%; 
+    }
+  
+    .product-card-shop {
+      flex-direction: column;
+      align-items: flex-start; 
+      margin: 1rem 0;
+    }
+  
+    .product-image-shop {
+      width: 80px; 
+      height: 80px;
+    }
+  
+    .product-name-shop {
+      font-size: 18px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .product-card-shop {
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+  
+    .product-image-shop {
+      width: 60px; 
+      height: 60px;
+    }
+  
+    .product-name-shop {
+      font-size: 16px; 
+    }
+  
+    .tr-table th, .tr-table td {
+      font-size: 14px; 
+      padding: 8px; 
+    }
+  }
+  

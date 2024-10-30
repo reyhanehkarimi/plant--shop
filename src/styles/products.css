@@ -1,0 +1,133 @@
+body {
+  overflow-x: hidden;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 8rem;
+  margin-top: 4rem;
+  max-width: 100%;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.add-to-cart-icon {
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  background-color: #fc5f5f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.product-card:hover .add-to-cart-icon {
+  display: block;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.star {
+  color: gold;
+}
+
+.add-to-cart {
+  background-color: #fc5f5f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: #f04747;
+}
+
+.type-of-product {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+  color: rgb(93, 97, 103);
+}
+
+.name-pro {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 0em;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.price-of-product,
+.off-price-of-product {
+  margin: 0px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  color: rgb(93, 97, 103);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.off-price-of-product {
+  opacity: 0.5;
+}
+
+.img-of-header {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 767px) { 
+  .products-container {
+    padding: 20px 1rem; 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .img-of-header {
+    height: auto; 
+    width: 100%;
+  }
+
+  h1, .first-paragraph, .btn-shop {
+    margin-left: 0; 
+  }
+}
+
+@media (max-width: 576px) { 
+  .products-container {
+    grid-template-columns: 2fr; 
+  }
+}
