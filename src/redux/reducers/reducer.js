@@ -27,7 +27,7 @@ const cartReducer = (state = initialState, action) => {
         totalPrice: state.totalPrice + itemPrice * action.payload.quantity,
       };
 
-    case DELETE_PRODUCT: // Handle deletion
+    case DELETE_PRODUCT: 
       const updatedItems = state.items.filter(item => item.name !== action.payload);
       const updatedTotalPrice = updatedItems.reduce((total, item) => total + (item.price * item.quantity), 0);
       

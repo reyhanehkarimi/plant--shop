@@ -69,14 +69,15 @@ const productsData = [
     src: "https://websitedemos.net/plant-store-02/wp-content/uploads/sites/410/2019/01/cactus6-free-img.jpg",
   },
 ];
-function Products() {
+function Products({ showAlertMessage }) { 
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    const productQuantity = { ...product, quantity: 1 }; 
+    const productQuantity = { ...product, quantity: 1 };
     dispatch(addToCart(productQuantity));
+
+    showAlertMessage(" Planet added to basket shop!");
   };
-  
 
   return (
     <div className="products-container">
@@ -86,35 +87,34 @@ function Products() {
             <img src={product.src} alt={product.name} className="product-image" />
             <button 
               className="add-to-cart-icon" 
-              onClick={() => handleAddToCart(product, index)} 
+              onClick={() => handleAddToCart(product)} 
             >
               <FontAwesomeIcon icon={faShoppingCart} />
             </button>
           </div>
 
           <div className="parent-data-of-products">
-  <p>{product.type}</p>
-  <h3 className="name-pro">{product.name}</h3>
-  <p className="star">{"★".repeat(product.stars)}</p>
-  {product.offPrice ? (
-    <>
-      <p className="price-of-product" style={{ textDecoration: 'line-through', }}>
-        {parseFloat(product.price).toFixed(2)} $
-      </p>
-      <p className="off-price-of-product">
-        {parseFloat(product.offPrice).toFixed(2)} $
-      </p>
-    </>
-  ) : (
-    <p className="price-of-product">
-      {parseFloat(product.price).toFixed(2)} $
-    </p>
-  )}
-</div>
+            <p>{product.type}</p>
+            <h3 className="name-pro">{product.name}</h3>
+            <p className="star">{"★".repeat(product.stars)}</p>
+            {product.offPrice ? (
+              <>
+                <p className="price-of-product" style={{ textDecoration: 'line-through' }}>
+                  {parseFloat(product.price).toFixed(2)} $
+                </p>
+                <p className="off-price-of-product">
+                  {parseFloat(product.offPrice).toFixed(2)} $
+                </p>
+              </>
+            ) : (
+              <p className="price-of-product">
+                {parseFloat(product.price).toFixed(2)} $
+              </p>
+            )}
+          </div>
         </div>
       ))}
     </div>
   );
 }
-
 export default Products;

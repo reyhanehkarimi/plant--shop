@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import { ADD_TO_CART, DELETE_PRODUCT } from './actions';
-// import { ADD_TO_SHOPPING_CART } from './actions';
 
 export const addToCart = (product) => ({
   type: ADD_TO_CART,
@@ -9,7 +8,7 @@ export const addToCart = (product) => ({
 
 export const deleteProduct = (productName) => ({
   type: DELETE_PRODUCT,
-  payload: productName, // Ensure this is the correct payload structure
+  payload: productName, 
 });
 // export const hideAlert = () => ({
 //   type: HIDE_ALERT,
