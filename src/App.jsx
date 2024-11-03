@@ -9,7 +9,7 @@ import CustomAlert from './components/AlertAddProduct';
 function App() {
   const [alertMessage, setAlertMessage] = useState("");
   const [showAlert, setShowAlert] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control menu open/close
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
 
   const showAlertMessage = (message) => {
     setAlertMessage(message);
@@ -21,14 +21,14 @@ function App() {
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle menu state
+    setIsMenuOpen(!isMenuOpen); 
   };
 
   return (
     <Router>
       <Header 
-        isMenuOpen={isMenuOpen} // Pass the state to Header
-        toggleMenu={toggleMenu} // Pass the toggle function to Header
+        isMenuOpen={isMenuOpen} 
+        toggleMenu={toggleMenu}
       />
       <Routes>
         <Route 
